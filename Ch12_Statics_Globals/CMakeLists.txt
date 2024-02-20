@@ -21,6 +21,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 enable_testing()
+add_subdirectory(Time_Library)
 add_subdirectory(${SOURCE_SOLUTION1})
 add_subdirectory(${SOURCE_SOLUTION2})
 add_subdirectory(${SOURCE_SOLUTION3})

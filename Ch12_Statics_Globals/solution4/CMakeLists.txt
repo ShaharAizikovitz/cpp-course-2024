@@ -1,13 +1,12 @@
 cmake_minimum_required(VERSION 3.14)
-project(Move)
+project(Solution4)
 
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(SOURCE_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/header)
-set(SOURCE_SOLUTION1 ${CMAKE_CURRENT_SOURCE_DIR}/solution1)
-set(SOURCE_SOLUTION2 ${CMAKE_CURRENT_SOURCE_DIR}/solution2)
+
 
 include(FetchContent)
 FetchContent_Declare(
@@ -42,8 +41,4 @@ target_link_libraries(
 )
 
 include(GoogleTest)
-# gtest_discover_tests(${PROJECT_NAME})
-
-if(MSVC)
-	set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
-endif()
+gtest_discover_tests(${PROJECT_NAME})
