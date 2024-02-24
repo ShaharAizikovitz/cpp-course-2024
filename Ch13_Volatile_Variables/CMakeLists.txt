@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(Move)
+project(Ch13_Volatile_Variables)
 
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
@@ -42,7 +42,7 @@ target_link_libraries(
 )
 
 include(GoogleTest)
-# gtest_discover_tests(${PROJECT_NAME})
+gtest_discover_tests(${PROJECT_NAME})
 
 if(MSVC)
 	set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})

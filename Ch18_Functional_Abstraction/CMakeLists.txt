@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(ch12_Statics_Globals)
+project(Ch15_Polymorphism)
 
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
@@ -10,6 +10,7 @@ set(SOURCE_SOLUTION1 ${CMAKE_CURRENT_SOURCE_DIR}/solution1)
 set(SOURCE_SOLUTION2 ${CMAKE_CURRENT_SOURCE_DIR}/solution2)
 set(SOURCE_SOLUTION3 ${CMAKE_CURRENT_SOURCE_DIR}/solution3)
 set(SOURCE_SOLUTION4 ${CMAKE_CURRENT_SOURCE_DIR}/solution4)
+set(SOURCE_SOLUTION5 ${CMAKE_CURRENT_SOURCE_DIR}/solution5)
 
 include(FetchContent)
 FetchContent_Declare(
@@ -21,11 +22,11 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 enable_testing()
-add_subdirectory(Time_Library)
 add_subdirectory(${SOURCE_SOLUTION1})
 add_subdirectory(${SOURCE_SOLUTION2})
 add_subdirectory(${SOURCE_SOLUTION3})
 add_subdirectory(${SOURCE_SOLUTION4})
+add_subdirectory(${SOURCE_SOLUTION5})
 
 file(GLOB SOURCES ${SOURCE_DIR}/*.cpp)
 file(GLOB HEADERS ${HEADER_DIR}/*.hpp ${HEADER_DIR}/*.h)
@@ -44,6 +45,7 @@ target_include_directories(
 target_link_libraries(
   ${PROJECT_NAME}
   GTest::gtest_main
+  Time_Library
 )
 
 include(GoogleTest)

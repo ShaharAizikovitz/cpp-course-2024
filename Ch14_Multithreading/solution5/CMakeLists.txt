@@ -17,8 +17,6 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 enable_testing()
-add_subdirectory(${SOURCE_SOLUTION1})
-add_subdirectory(${SOURCE_SOLUTION2})
 
 file(GLOB SOURCES ${SOURCE_DIR}/*.cpp)
 file(GLOB HEADERS ${HEADER_DIR}/*.hpp ${HEADER_DIR}/*.h)

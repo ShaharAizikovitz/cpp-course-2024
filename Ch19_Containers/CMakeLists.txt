@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(ch12_Statics_Globals)
+project(Ch19_Containers)
 
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
@@ -44,6 +44,7 @@ target_include_directories(
 target_link_libraries(
   ${PROJECT_NAME}
   GTest::gtest_main
+  Time_Library
 )
 
 include(GoogleTest)
